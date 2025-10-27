@@ -1,8 +1,7 @@
-import requests
+# test_sample.py
 
-def get_status():
-    response = requests.get("https://httpbin.org/status/200")
-    return response.status_code
+from main import add
 
-if __name__ == "__main__":
-    print("Status Code:", get_status())
+def test_addition():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0

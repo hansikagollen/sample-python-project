@@ -1,8 +1,8 @@
-import requests
+# main.py
 
-def get_status():
-    response = requests.get("https://httpbin.org/status/200")
-    return response.status_code
+def add(a, b):
+    return a + b
 
 if __name__ == "__main__":
-    print("Status Code:", get_status())
+    result = add(2, 3)
+    print("Result:", result)
