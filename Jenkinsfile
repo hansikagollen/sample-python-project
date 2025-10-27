@@ -19,11 +19,12 @@ pipeline {
 
 
         stage('Run Tests') {
-            steps {
-                echo 'Running tests...'
-                bat 'pytest .'
-            }
-        }
+    steps {
+        echo 'Running tests...'
+        bat 'pytest --maxfail=1 --disable-warnings -q --junitxml=report.xml'
+    }
+}
+
 
         stage('Archive Results') {
             steps {
