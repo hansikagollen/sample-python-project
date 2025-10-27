@@ -2,7 +2,6 @@ stages:
   - install
   - test
 
-# Step 1: Install dependencies from requirements.txt
 install_dependencies:
   stage: install
   image: python:3.11
@@ -10,17 +9,12 @@ install_dependencies:
     - echo "Installing Python dependencies..."
     - pip install --upgrade pip
     - pip install -r requirements.txt
-  artifacts:
-    paths:
-      - .venv/
-      - __pycache__/
 
-# Step 2: Run tests
 run_tests:
   stage: test
   image: python:3.11
   script:
     - echo "Running Python tests..."
-    - pytest tests/
+    - pytest .
   dependencies:
     - install_dependencies
