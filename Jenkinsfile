@@ -17,6 +17,14 @@ pipeline {
     }
 }
 
+        stage('Verify Files') {
+    steps {
+        echo 'Listing files in workspace...'
+        bat 'dir'
+    }
+}
+
+
 
         stage('Run Tests') {
     steps {
